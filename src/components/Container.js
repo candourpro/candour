@@ -5,8 +5,8 @@ import windowSize from 'react-window-size';
 import _ from 'lodash';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
 
-import step from '@bloometry/step';
-import fluid from '@bloometry/fluid';
+import step from '@candour/step';
+import fluid from '@candour/fluid';
 import maxReadableWidth from '../theme/maxReadableWidth';
 import isSmall from '../theme/isSmall';
 

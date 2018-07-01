@@ -2,20 +2,20 @@
 # yarn lockfile v1
 
 
-"@bloometry/fluid@1.0.9", "@bloometry/fluid@^1.0.9":
+"@candour/fluid@^1.0.9":
   version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@bloometry/fluid/-/fluid-1.0.9.tgz#6492f86958fd468ae6e8b1ac52afcd82a7923cf9"
+  resolved "https://registry.yarnpkg.com/@candour/fluid/-/fluid-1.0.9.tgz#6d966b1c290e9de164d4e334b7b7573d77026780"
   dependencies:
     babel-cli "^6.26.0"
     babel-preset-env "^1.6.1"
     babel-preset-minify "^0.3.0"
     number-parsing "^0.3.0"
 
-"@bloometry/step@^1.0.10":
-  version "1.0.10"
-  resolved "https://registry.yarnpkg.com/@bloometry/step/-/step-1.0.10.tgz#73df394664e68329a8eb052782f98d1e7da299dc"
+"@candour/step@^1.0.11":
+  version "1.0.11"
+  resolved "https://registry.yarnpkg.com/@candour/step/-/step-1.0.11.tgz#50cc4fe21da17fa26a2369932c16f1c2bf7288d4"
   dependencies:
-    "@bloometry/fluid" "1.0.9"
+    "@candour/fluid" "^1.0.9"
     babel-cli "^6.26.0"
     babel-preset-env "^1.6.1"
     babel-preset-minify "^0.3.0"

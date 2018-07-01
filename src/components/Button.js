@@ -5,9 +5,9 @@ import Radium from 'radium';
 import windowSize from 'react-window-size';
 
 import borderRadius from '../theme/borderRadius';
-import step from '@bloometry/step';
+import step from '@candour/step';
 import colors from '../theme/colors';
-import fluid from '@bloometry/fluid';
+import fluid from '@candour/fluid';
 
 import Container from './Container';
 import { CandourConsumer } from '../index';

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { compose } from 'redux';
 import Radium from 'radium';
 
-import fluid from '@bloometry/fluid';
+import fluid from '@candour/fluid';
 
 import Text from './Text';
 import { CandourConsumer } from '../index';
