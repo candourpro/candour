@@ -1,0 +1,40 @@
+{
+  "name": "candour",
+  "version": "1.0.0",
+  "author": "Domas Bitvinskas",
+  "description": "Fluid design framework",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/Nedomas/candour",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Nedomas/candour.git"
+  },
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@bloometry/fluid": "^1.0.9",
+    "@bloometry/step": "^1.0.10",
+    "filter-invalid-dom-props": "^2.0.0",
+    "lodash": "^4.17.10",
+    "prop-types": "^15.6.2",
+    "radium": "^0.24.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-spinkit": "^3.0.0",
+    "react-window-size": "^1.2.0",
+    "redux": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.5.1",
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.2"
+  }
+}
