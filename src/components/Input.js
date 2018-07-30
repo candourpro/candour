@@ -1,30 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { compose } from 'redux';
 import Radium from 'radium';
+import { CandourConsumer } from '../index';
 
 import borders from '../theme/borders';
 import colors from '../theme/colors';
 import borderRadius from '../theme/borderRadius';
 import Container from './Container';
 
-class Input extends Component {
-  render() {
-    const {
-      meta: {
-        touched,
-        error,
-      },
-      hideError,
-    } = this.props;
-
-    return <Container {...this.props.input} padding={1.2} component='input' {...this.props} style={[
-        styles.input,
-        this.props.style,
-        !hideError && touched && error && styles.error
-      ]}
-    />;
-  }
-};
+export default Radium((props) => (
+  <CandourConsumer>
+    {theme => (
+      <Container {...props.input} padding={1.2} component='input' {...props} style={[
+          styles.input,
+          props.style,
+          theme.input,
+          props.error && styles.error,
+        ]}
+      />
+    )}
+  </CandourConsumer>
+))
 
 const styles = {
   input: {
@@ -45,7 +41,3 @@ const styles = {
     border: borders.red,
   },
 };
-
-export default compose(
-  Radium,
-)(Input);

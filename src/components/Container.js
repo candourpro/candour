@@ -71,6 +71,7 @@ class Container extends Component {
       justify,
       textAlignRight,
       flex,
+      flexEnd,
       baseline,
       wrap,
       inline,
@@ -86,6 +87,7 @@ class Container extends Component {
         {...this.childProps()}
         style={[
           flex && styles.flex,
+          flexEnd && styles.flexEnd,
           baseline && styles.baseline,
           wrap && styles.wrap,
           alignItemsCenter && styles.alignItemsCenter,
@@ -177,6 +179,10 @@ const styles = {
   },
   flex: {
     display: 'flex',
+  },
+  flexEnd: {
+    display: 'flex',
+    justifyContent: 'flex-end',
   },
   baseline: {
     alignItems: 'baseline',
