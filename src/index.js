@@ -1,15 +1,32 @@
 import React from 'react'
+import _ from 'lodash'
 
-import Container from './components/Container'
-import Text from './components/Text'
-import Headline from './components/Headline'
-import Button from './components/Button'
-import Input from './components/Input'
+import Container, { styles as container } from './components/Container'
+import Text, { styles as text } from './components/Text'
+import Headline, { styles as headline } from './components/Headline'
+import Button, { styles as button } from './components/Button'
+import Input, { styles as input } from './components/Input'
 import round from './theme/round'
 import isSmall from './theme/isSmall'
 
-const { Provider, Consumer } = React.createContext({})
-const CandourProvider = Provider
+const theme = {
+  container,
+  text,
+  headline,
+  button,
+  input,
+}
+
+const { Provider, Consumer } = React.createContext(theme)
+const CandourProvider = ({ value, children }) => (
+  <Consumer>
+    {defaultTheme =>
+      <Provider value={_.defaultsDeep(value, defaultTheme)}>
+        {children}
+      </Provider>
+    }
+  </Consumer>
+)
 const CandourConsumer = Consumer
 
 export {

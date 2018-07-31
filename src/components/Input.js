@@ -1,6 +1,7 @@
 import React from 'react';
 import { compose } from 'redux';
 import Radium from 'radium';
+import step from '@candour/step';
 import { CandourConsumer } from '../index';
 
 import borders from '../theme/borders';
@@ -11,8 +12,8 @@ import Container from './Container';
 export default Radium((props) => (
   <CandourConsumer>
     {theme => (
-      <Container {...props.input} padding={1.2} component='input' {...props} style={[
-          styles.input,
+      <Container {...props.input} padding={1.2} component={props.component || 'input'} {...props} style={[
+          styles.base,
           props.style,
           theme.input,
           props.error && styles.error,
@@ -22,8 +23,8 @@ export default Radium((props) => (
   </CandourConsumer>
 ))
 
-const styles = {
-  input: {
+export const styles = {
+  base: {
     backgroundColor: colors.halfWhite,
     outline: 0,
     border: '1px solid transparent',
@@ -32,6 +33,7 @@ const styles = {
     boxSizing: 'border-box',
     width: '100%',
     WebkitAppearance: 'none',
+    padding: `0 ${step()}`,
 
     ':focus': {
       border: borders.yellow,

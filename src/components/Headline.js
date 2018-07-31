@@ -39,7 +39,7 @@ class Headline extends Component {
   }
 };
 
-const styles = [
+export const styles = [
   {
     fontSize: fluid(40, 140),
     lineHeight: fluid(60, 150),

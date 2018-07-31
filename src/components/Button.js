@@ -69,7 +69,7 @@ class Button extends Component {
   }
 };
 
-const styles = {
+export const styles = {
   container: {
     display: 'flex',
     alignItems: 'center',

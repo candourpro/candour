@@ -128,7 +128,7 @@ class Container extends Component {
   }
 };
 
-const styles = {
+export const styles = {
   minWindowHeight: {
     minHeight: '60vh',
   },
