@@ -2,6 +2,7 @@ import React from 'react';
 import { compose } from 'redux';
 import Radium from 'radium';
 import step from '@candour/step';
+import fluid from '@candour/fluid';
 import { CandourConsumer } from '../index';
 
 import borders from '../theme/borders';
@@ -33,6 +34,7 @@ export const styles = {
     boxSizing: 'border-box',
     width: '100%',
     WebkitAppearance: 'none',
+    height: fluid(50, 70),
     padding: `0 ${step()}`,
 
     ':focus': {
