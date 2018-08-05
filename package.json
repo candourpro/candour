@@ -17,7 +17,9 @@
   "dependencies": {
     "@candour/fluid": "^1.0.9",
     "@candour/step": "^1.0.11",
+    "camelcase-css": "^2.0.0",
     "filter-invalid-dom-props": "^2.0.0",
+    "known-css-properties": "^0.6.1",
     "lodash": "^4.17.10",
     "prop-types": "^15.6.2",
     "radium": "^0.24.0",

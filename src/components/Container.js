@@ -4,6 +4,8 @@ import Radium from 'radium';
 import windowSize from 'react-window-size';
 import _ from 'lodash';
 import filterInvalidDOMProps from 'filter-invalid-dom-props';
+import { all as knownCssProperties } from 'known-css-properties'
+import camelCaseCss from 'camelcase-css'
 
 import step from '@candour/step';
 import fluid from '@candour/fluid';
@@ -41,86 +43,58 @@ class Container extends Component {
     return filterInvalidDOMProps(this.props);
   }
 
+  cssProps() {
+    return _.pickBy(this.props, (_value, key) => this.partialCssMatch(key))
+  }
+
+  partialCssMatch(key) {
+    return _.find(_.reverse(_.sortBy(knownCssProperties, 'length')), (knownProp) =>
+      _.startsWith(key, camelCaseCss(knownProp))
+    )
+  }
+
+  isCssFullMatch(key) {
+    return _.some(knownCssProperties, (knownProp) => knownProp === key)
+  }
+
+  style() {
+    const result = []
+
+    _.each(this.cssProps(), (value, key) => {
+      if (this.isCssFullMatch(key)) {
+        if (_.isNumber(value)) {
+          return result.push({ [key]: step(value) })
+        }
+
+        if (_.isBoolean(value) && value) {
+          return result.push({ [key]: step(2) })
+        }
+
+        return result.push({ [key]: value })
+      }
+
+      result.push({ [camelCaseCss(this.partialCssMatch(key))]: _.kebabCase(key.replace(new RegExp(`^${camelCaseCss(this.partialCssMatch(key))}`), '')) })
+      return
+    })
+
+    result.push(this.props.style)
+
+    return _.flatten(result)
+  }
+
   render() {
     const {
-      style,
-      center,
-      middle,
-      narrow,
-      limited,
-      left,
-      right,
-      chaos,
-      dark,
-      minWindowHeight,
-      padding,
-      paddingTop,
-      paddingBottom,
-      paddingLeft,
-      paddingRight,
-      paddingNavbar,
-      readable,
-      spaceBetween,
-      margin,
-      marginTopRaw,
-      marginBottomRaw,
-      marginLeft,
-      marginRight,
-      marginTop,
-      marginBottom,
-      justify,
-      textAlignRight,
-      flex,
-      flexEnd,
-      baseline,
-      wrap,
-      inline,
-      inlineBlock,
-      alignItemsCenter,
       children,
     } = this.props;
 
     const TagName = this.tagName();
+    console.log(_.reverse(_.sortBy(knownCssProperties, 'length')))
+    console.log(this.style())
 
     return (
       <TagName
         {...this.childProps()}
-        style={[
-          flex && styles.flex,
-          flexEnd && styles.flexEnd,
-          baseline && styles.baseline,
-          wrap && styles.wrap,
-          alignItemsCenter && styles.alignItemsCenter,
-          inline && styles.inline,
-          inlineBlock && styles.inlineBlock,
-          center && styles.center,
-          narrow && styles.narrow,
-          limited && styles.limited,
-          chaos && styles.chaos,
-          dark && chaos && styles.dark.chaos,
-          minWindowHeight && styles.minWindowHeight,
-          middle && styles.middle,
-          left && styles.left,
-          right && styles.right,
-          spaceBetween && styles.spaceBetween,
-          padding && { padding: this.steps(padding, isSmall(this) ? 1.5 : 2) },
-          margin && { margin: this.steps(margin, isSmall(this) ? 1.5 : 2) },
-          marginLeft && { marginLeft: this.steps(marginLeft, 1) },
-          marginRight && { marginRight: this.steps(marginRight, 1) },
-          marginTop && { marginTop: this.steps(marginTop, 1) },
-          marginBottom && { marginBottom: this.steps(marginBottom, 1) },
-          marginTopRaw && { marginTop: marginTopRaw },
-          marginBottomRaw && { marginBottom: marginBottomRaw },
-          paddingTop && { paddingTop: this.steps(paddingTop, 1) },
-          paddingBottom && { paddingBottom: this.steps(paddingBottom, 1) },
-          paddingLeft && { paddingLeft: this.steps(paddingLeft, 1) },
-          paddingRight && { paddingRight: this.steps(paddingRight, 1) },
-          readable && styles.readable,
-          paddingNavbar && { paddingTop: this.steps(paddingNavbar, 5) },
-          justify && { textAlign: 'justify' },
-          textAlignRight && { textAlign: 'right' },
-          style,
-        ]}
+        style={this.style()}
       >
         {children}
       </TagName>
