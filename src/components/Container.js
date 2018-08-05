@@ -11,6 +11,9 @@ import step from '@candour/step';
 import fluid from '@candour/fluid';
 import maxReadableWidth from '../theme/maxReadableWidth';
 import isSmall from '../theme/isSmall';
+import calculateStyles from '../helpers/calculateStyles'
+import { CandourConsumer } from '../index';
+import modifierStyles from '../helpers/modifierStyles'
 
 class Container extends Component {
   steps(number, defaultSteps) {
@@ -85,91 +88,34 @@ class Container extends Component {
   render() {
     const {
       children,
+      candourName = 'container',
+      candourBase = 'base',
+      style,
+      ...rest,
     } = this.props;
 
     const TagName = this.tagName();
-    console.log(_.reverse(_.sortBy(knownCssProperties, 'length')))
-    console.log(this.style())
+    const pickStyleProps = (styles) => _.omitBy(styles, _.isObject)
 
     return (
-      <TagName
-        {...this.childProps()}
-        style={this.style()}
-      >
-        {children}
-      </TagName>
+      <CandourConsumer>
+        {theme => (
+          <TagName
+            {...this.childProps()}
+            style={_.flatten([
+              pickStyleProps(_.get(theme, [candourName, candourBase], {})),
+              modifierStyles(_.get(theme, candourName, {}), rest),
+              modifierStyles(theme, rest),
+              this.style(),
+              style,
+            ])}
+          >
+            {children}
+          </TagName>
+        )}
+      </CandourConsumer>
     );
   }
-};
-
-export const styles = {
-  minWindowHeight: {
-    minHeight: '60vh',
-  },
-  center: {
-    margin: '0 auto',
-  },
-  alignItemsCenter: {
-    alignItems: 'center',
-  },
-  middle: {
-    display: 'flex',
-    paddingTop: `calc(100vh - 60px - ${step(6)})`,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  narrow: {
-    width: '100%',
-    maxWidth: '300px',
-  },
-  limited: {
-    maxWidth: '700px',
-  },
-  left: {
-    textAlign: 'left',
-  },
-  right: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-  },
-  spaceBetween: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  },
-  chaos: {
-    backgroundImage: 'url("/splash.svg")',
-    backgroundSize: fluid(200, 400),
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: '95% 40%',
-  },
-  dark: {
-    chaos: {
-      backgroundImage: 'url("/chaos-black.svg")',
-    },
-  },
-  readable: {
-    maxWidth: maxReadableWidth,
-  },
-  flex: {
-    display: 'flex',
-  },
-  flexEnd: {
-    display: 'flex',
-    justifyContent: 'flex-end',
-  },
-  baseline: {
-    alignItems: 'baseline',
-  },
-  wrap: {
-    flexWrap: 'wrap',
-  },
-  inlineBlock: {
-    display: 'inline-block',
-  },
-  inline: {
-    display: 'inline',
-  },
 };
 
 export default compose(
