@@ -1,6 +1,6 @@
 import _ from 'lodash'
 
-export default (styles, props) => {
+export default (props, styles) => {
   const result = []
 
   _.each(props, (val, key) => {
