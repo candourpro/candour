@@ -26,6 +26,7 @@ const partialValue = (key, partial) => (
 
 export default (props) => {
   return _.map(props, (val, key) => {
+    if (_.isBoolean(val) && !val) return
     if (fullMatch(key)) return { [key]: selectValue(val) }
 
     const partial = partialMatch(key)
