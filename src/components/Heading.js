@@ -1,13 +1,13 @@
 import React from 'react'
-import Text from './Text'
+import Container from './Container'
 
 export default ({ level = 1, children, candourName = 'heading', ...rest }) => (
-  <Text
+  <Container
     {...rest}
     component={`h${level}`}
     candourName={candourName}
     candourBase={level}
   >
     {children}
-  </Text>
+  </Container>
 )
