@@ -1,6 +1,6 @@
 {
   "name": "candour",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "author": "Domas Bitvinskas",
   "description": "Fluid design framework",
   "main": "dist/index.js",
