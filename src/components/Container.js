@@ -57,7 +57,7 @@ class Container extends Component {
   }
 
   isCssFullMatch(key) {
-    return _.some(knownCssProperties, (knownProp) => knownProp === key)
+    return _.some(knownCssProperties, (knownProp) => camelCaseCss(knownProp) === key)
   }
 
   style() {
@@ -70,8 +70,9 @@ class Container extends Component {
         }
 
         if (_.isBoolean(value) && value) {
-          return result.push({ [key]: step(2) })
+          return result.push({ [key]: step(1) })
         }
+
 
         return result.push({ [key]: value })
       }
