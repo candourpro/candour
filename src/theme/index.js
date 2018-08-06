@@ -77,6 +77,7 @@ export default {
       justifyContent: 'center',
 
       height: fluid(50, 70),
+      width: '100%',
 
       padding: `0 ${step()}`,
 
@@ -93,56 +94,6 @@ export default {
       ':hover': {
         backgroundColor: colors.lighterBlack,
       },
-    },
-    limitWidth: {
-      maxWidth: '320px',
-    },
-    center: {
-      margin: '0 auto',
-    },
-    needsWidth: {
-      width: '100%',
-    },
-    tiny: {
-      display: 'inline-flex',
-      width: 'initial',
-      padding: `${step(0.5)} ${step()}`,
-      lineHeight: 'initial',
-      height: 'initial',
-    },
-    bitTransparent: {
-      opacity: 0.9,
-    },
-    transparent: {
-      color: colors.lighterBlack,
-      backgroundColor: colors.lightLightBlack,
-
-      ':hover': {
-        backgroundColor: colors.darkerLightLightBlack,
-      },
-    },
-    more: {
-      backgroundColor: colors.lightLightGrey,
-      color: colors.black,
-
-      ':hover': {
-        backgroundColor: colors.lightGrey,
-      },
-    },
-    disabled: {
-      color: colors.grey,
-      border: `1px solid ${colors.borderGrey}`,
-      backgroundColor: colors.white,
-
-      ':hover': {
-        backgroundColor: colors.lightLightGrey,
-      },
-    },
-    longText: {
-      fontSize: fluid(14, 16),
-    },
-    active: {
-      border: `1px solid ${colors.lighterBlack}`,
     },
   },
 }
