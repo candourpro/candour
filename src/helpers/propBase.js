@@ -1,13 +1,6 @@
 import _ from 'lodash'
 
-export default (props, styles) => {
-  const result = []
-
-  _.each(props, (val, key) => {
-    if (!_.isPlainObject(_.get(styles, key))) return
-
-    result.push(styles[key])
-  })
-
-  return result
-}
+export default (props, styles) =>
+  _.map(props, (val, key) =>
+    _.isPlainObject(_.get(styles, key)) ? styles[key] : null
+  )
