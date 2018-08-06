@@ -1,21 +1,14 @@
 import React from 'react'
 import _ from 'lodash'
 
-import Container, { styles as container } from './components/Container'
-import Text, { styles as text } from './components/Text'
-import Headline, { styles as headline } from './components/Headline'
-import Button, { styles as button } from './components/Button'
-import Input, { styles as input } from './components/Input'
+import Container from './components/Container'
+import Text from './components/Text'
+import Heading from './components/Heading'
+import Button from './components/Button'
+import Input from './components/Input'
 import round from './theme/round'
 import isSmall from './theme/isSmall'
-
-const theme = {
-  container,
-  text,
-  headline,
-  button,
-  input,
-}
+import theme from './theme'
 
 const { Provider, Consumer } = React.createContext(theme)
 const CandourProvider = ({ value, children }) => (
@@ -34,7 +27,7 @@ export {
   CandourConsumer,
   Container,
   Text,
-  Headline,
+  Heading,
   Button,
   Input,
   isSmall,
