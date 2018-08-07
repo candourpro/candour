@@ -1,10 +1,9 @@
 import _ from 'lodash'
 import { all as knownCssProperties } from 'known-css-properties'
-import camelCaseCss from 'camelcase-css'
 import step from '@candour/step'
 
 const fullMatch = (key) => (
-  _.some(knownCssProperties, (knownProp) => camelCaseCss(knownProp) === key)
+  _.some(knownCssProperties, (knownProp) => _.camelCase(knownProp) === key)
 )
 
 const selectValue = (val) => {
@@ -16,12 +15,12 @@ const selectValue = (val) => {
 
 const partialMatch = (key) => (
   _.find(_.reverse(_.sortBy(knownCssProperties, 'length')), (knownProp) =>
-    _.startsWith(key, camelCaseCss(knownProp))
+    _.startsWith(key, _.camelCase(knownProp))
   )
 )
 
 const partialValue = (key, partial) => (
-  _.kebabCase(key.replace(new RegExp(`^${camelCaseCss(partial)}`), ''))
+  _.kebabCase(key.replace(new RegExp(`^${_.camelCase(partial)}`), ''))
 )
 
 export default (props) => {
@@ -33,7 +32,7 @@ export default (props) => {
     if (!partial) return
 
     return {
-      [camelCaseCss(partial)]: partialValue(key, partial)
+      [_.camelCase(partial)]: partialValue(key, partial)
     }
   })
 }

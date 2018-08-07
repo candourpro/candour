@@ -1,6 +1,6 @@
 {
   "name": "candour",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "author": "Domas Bitvinskas",
   "description": "Fluid design framework",
   "main": "dist/index.js",
@@ -17,7 +17,6 @@
   "dependencies": {
     "@candour/fluid": "^1.0.9",
     "@candour/step": "^1.0.11",
-    "camelcase-css": "^2.0.0",
     "filter-invalid-dom-props": "^2.0.0",
     "known-css-properties": "^0.6.1",
     "lodash": "^4.17.10",
