@@ -1,21 +1,11 @@
 import React from 'react'
 import Radium from 'radium'
 import _ from 'lodash'
-import filterInvalidDOMProps from 'filter-invalid-dom-props'
 
-import isSmall from '../theme/isSmall';
 import { CandourConsumer } from '../index';
 import style from '../helpers/style'
-
-const isHtmlElement = _.isString
-
-const childrenProps = (props, component) => {
-  if (!isHtmlElement(component)) {
-    return _.pick(props, _.keys(component.propTypes).concat('onMouseEnter', 'onMouseLeave'))
-  }
-
-  return filterInvalidDOMProps(props)
-}
+import ensureRadium from '../helpers/ensureRadium'
+import childrenProps from '../helpers/childrenProps'
 
 export default Radium(({
   children,
@@ -24,7 +14,7 @@ export default Radium(({
   candourBase = 'base',
   ...rest,
 }) => {
-  const Tag = component
+  const Tag = ensureRadium(component)
 
   return (
     <CandourConsumer>
