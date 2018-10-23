@@ -1,10 +1,16 @@
 import React from 'react'
 import Container from './Container'
 
-export default ({ level = 1, children, candourName = 'heading', ...rest }) => (
+export default ({
+  level = 1,
+  children,
+  component = `h${level}`,
+  candourName = 'heading',
+  ...rest,
+}) => (
   <Container
     {...rest}
-    component={`h${level}`}
+    component={component}
     candourName={candourName}
     candourBase={level}
   >

@@ -1,10 +1,15 @@
 import React, { Component } from 'react'
 import Container from './Container'
 
-export default ({ children, candourName = 'button', ...rest }) => (
+export default ({
+  children,
+  component = 'button',
+  candourName = 'button',
+  ...rest,
+}) => (
   <Container
     {...rest}
-    component='button'
+    component={component}
     candourName={candourName}
   >
     {children}
