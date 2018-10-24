@@ -3,52 +3,17 @@ import step from '@candour/step'
 import colors from './colors'
 import borderRadius from './borderRadius'
 import borders from './borders'
+import generateLevels from '../helpers/generateLevels'
 
 export default {
-  heading: {
-    1: {
-      fontSize: fluid(40, 140),
-      lineHeight: fluid(60, 150),
-    },
-    2: {
-      fontSize: fluid(35, 50),
-      lineHeight: fluid(40, 55),
-    },
-    3: {
-      fontSize: fluid(24, 30),
-      lineHeight: fluid(28, 34),
-    },
-    4: {
-      fontSize: fluid(20, 24),
-      lineHeight: fluid(23, 33),
-    },
-  },
-  text: {
-    1: {
-      fontSize: fluid(15, 16),
-      lineHeight: fluid(17, 18),
-
-      tight: {
-        lineHeight: fluid(15, 16),
-      }
-    },
-    2: {
-      fontSize: fluid(18, 22),
-      lineHeight: fluid(26, 36),
-
-      tight: {
-        lineHeight: fluid(18, 22),
-      },
-    },
-    3: {
-      fontSize: fluid(20, 39),
-      lineHeight: fluid(25, 44),
-
-      tight: {
-        lineHeight: fluid(34, 39),
-      },
-    },
-  },
+  heading: generateLevels((n) => ({
+    fontSize: step(3 - 0.7 * (n - 1)),
+    lineHeight: 1,
+  })),
+  text: generateLevels((n) => ({
+    fontSize: step(1 + 0.2 * (n - 1)),
+    lineHeight: 1.5,
+  })),
   input: {
     base: {
       backgroundColor: colors.halfWhite,
@@ -76,12 +41,12 @@ export default {
       alignItems: 'center',
       justifyContent: 'center',
 
-      height: fluid(50, 70),
       width: '100%',
+      height: fluid(50, 70),
 
       padding: `0 ${step()}`,
 
-      fontSize: fluid(16, 18),
+      fontSize: step(),
       letterSpacing: '.06em',
       color: colors.white,
       backgroundColor: colors.black,

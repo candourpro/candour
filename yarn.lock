@@ -11,9 +11,9 @@
     babel-preset-minify "^0.3.0"
     number-parsing "^0.3.0"
 
-"@candour/step@^1.0.11":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@candour/step/-/step-1.0.11.tgz#50cc4fe21da17fa26a2369932c16f1c2bf7288d4"
+"@candour/step@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@candour/step/-/step-2.0.0.tgz#fc21c9afb6acd3519ab7af12312f241418895c90"
   dependencies:
     "@candour/fluid" "^1.0.9"
     babel-cli "^6.26.0"
