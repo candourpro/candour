@@ -6,7 +6,7 @@ import borderRadius from './borderRadius'
 import borders from './borders'
 import levels from '../helpers/levels'
 
-const sizes = [4, 3, 2, 1.75, 1.5, 1]
+const sizes = [4, 3, 2, 1.75, 1.25, 1]
 
 export default {
   heading: levels('fontSize', sizes),
