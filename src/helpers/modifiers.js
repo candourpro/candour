@@ -1,9 +1,10 @@
 import _ from 'lodash'
 import { all as knownCssProperties } from 'known-css-properties'
+import camelCaseCss from 'camelcase-css'
 import step from '@candour/step'
 
 const fullMatch = (key) => (
-  _.some(knownCssProperties, (knownProp) => _.camelCase(knownProp) === key)
+  _.some(knownCssProperties, (knownProp) => camelCaseCss(knownProp) === key)
 )
 
 const selectValue = (val) => {

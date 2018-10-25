@@ -18,14 +18,18 @@ export default Radium(({
 
   return (
     <CandourConsumer>
-      {theme => (
-        <Tag
-          {...childrenProps(rest, Tag)}
-          style={style(theme, rest, candourName, candourBase)}
-        >
-          {children}
-        </Tag>
-      )}
+      {theme => {
+        const styles = style(theme, rest, candourName, candourBase)
+
+        return (
+          <Tag
+            {...childrenProps(rest, Tag, styles)}
+            style={styles}
+          >
+            {children}
+          </Tag>
+        )
+      }}
     </CandourConsumer>
   )
 })
