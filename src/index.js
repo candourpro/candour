@@ -9,6 +9,7 @@ import Input from './components/Input'
 import round from './theme/round'
 import isSmall from './theme/isSmall'
 import theme from './theme'
+import levels from './helpers/levels'
 
 const { Provider, Consumer } = React.createContext(theme)
 const CandourProvider = ({ value, children }) => (
@@ -31,4 +32,5 @@ export {
   Button,
   Input,
   isSmall,
+  levels,
 }

@@ -3,7 +3,7 @@ import Container from './Container'
 
 export default ({
   children,
-  level = 1,
+  level = 6,
   candourName = 'text',
   ...rest,
 }) => (

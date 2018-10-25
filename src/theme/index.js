@@ -1,19 +1,16 @@
+import _ from 'lodash'
 import fluid from '@candour/fluid'
 import step from '@candour/step'
 import colors from './colors'
 import borderRadius from './borderRadius'
 import borders from './borders'
-import generateLevels from '../helpers/generateLevels'
+import levels from '../helpers/levels'
+
+const sizes = [4, 3, 2, 1.75, 1.5, 1]
 
 export default {
-  heading: generateLevels((n) => ({
-    fontSize: step(3 - 0.7 * (n - 1)),
-    lineHeight: 1,
-  })),
-  text: generateLevels((n) => ({
-    fontSize: step(1 + 0.2 * (n - 1)),
-    lineHeight: 1.5,
-  })),
+  heading: levels('fontSize', sizes),
+  text: levels('fontSize', sizes),
   input: {
     base: {
       backgroundColor: colors.halfWhite,
