@@ -1,7 +1,7 @@
 export default {
   white: '#fff',
-  almostWhite: 'hsla(0, 0%, 100%, 0.7)',
-  halfWhite: 'hsla(0, 0%, 100%, 0.4)',
+  almostWhite: 'hsla(0, 0%, 90%, 1)',
+  halfWhite: 'hsla(0, 0%, 50%, 1)',
   black: '#262627',
   grey: 'hsla(240, 1%, 45%, 1)',
   tintBlack: 'hsla(240, 1%, 15%, .05)',

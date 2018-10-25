@@ -6,6 +6,8 @@ import Text from './components/Text'
 import Heading from './components/Heading'
 import Button from './components/Button'
 import Input from './components/Input'
+import Code from './components/Code'
+
 import round from './theme/round'
 import isSmall from './theme/isSmall'
 import theme from './theme'
@@ -31,6 +33,7 @@ export {
   Heading,
   Button,
   Input,
+  Code,
   isSmall,
   levels,
 }

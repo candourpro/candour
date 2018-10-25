@@ -58,4 +58,11 @@ export default {
       },
     },
   },
+  code: {
+    base: {
+      backgroundColor: colors.almostWhite,
+      padding: step(),
+      fontSize: step(),
+    },
+  },
 }
