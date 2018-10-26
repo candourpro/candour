@@ -36,4 +36,5 @@ export {
   Code,
   isSmall,
   levels,
+  defaultTheme: theme,
 }

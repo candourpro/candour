@@ -4,6 +4,7 @@ import step from '@candour/step'
 import colors from './colors'
 import borderRadius from './borderRadius'
 import borders from './borders'
+import fontFamilies from './fontFamilies'
 import levels from '../helpers/levels'
 
 const sizes = [4, 3, 2, 1.75, 1.25, 1]
@@ -63,6 +64,7 @@ export default {
       backgroundColor: colors.almostWhite,
       padding: step(),
       fontSize: step(),
+      fontFamily: fontFamilies.monospace,
     },
   },
 }
