@@ -12,7 +12,7 @@ export default ({
     {...rest}
     component={component}
     candourName={candourName}
-    candourBase={level}
+    candourLevel={level}
   >
     {children}
   </Container>

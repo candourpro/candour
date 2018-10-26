@@ -11,7 +11,7 @@ export default Radium(({
   children,
   component = 'div',
   candourName = 'container',
-  candourBase = 'base',
+  candourLevel = 6,
   ...rest,
 }) => {
   const Tag = ensureRadium(component)
@@ -19,7 +19,7 @@ export default Radium(({
   return (
     <CandourConsumer>
       {theme => {
-        const styles = style(theme, rest, candourName, candourBase)
+        const styles = style(theme, rest, candourName, candourLevel)
 
         return (
           <Tag

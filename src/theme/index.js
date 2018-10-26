@@ -62,9 +62,10 @@ export default {
   code: {
     base: {
       backgroundColor: colors.almostWhite,
-      padding: step(),
-      fontSize: step(),
+      padding: 1,
       fontFamily: fontFamilies.monospace,
+      whiteSpace: 'pre-wrap',
     },
+    ...levels('fontSize', sizes),
   },
 }

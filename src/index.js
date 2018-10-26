@@ -15,13 +15,9 @@ import levels from './helpers/levels'
 
 const { Provider, Consumer } = React.createContext(theme)
 const CandourProvider = ({ value, children }) => (
-  <Consumer>
-    {defaultTheme =>
-      <Provider value={_.defaultsDeep(value, defaultTheme)}>
-        {children}
-      </Provider>
-    }
-  </Consumer>
+  <Provider value={_.defaultsDeep(_.cloneDeep(value), theme)}>
+    {children}
+  </Provider>
 )
 const CandourConsumer = Consumer
 
@@ -36,5 +32,4 @@ export {
   Code,
   isSmall,
   levels,
-  defaultTheme: theme,
 }

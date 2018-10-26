@@ -1,5 +1,5 @@
 import _ from 'lodash'
 
-export default (theme, candourName, candourBase) => (
-  _.omitBy(_.get(theme, [candourName, candourBase], {}), _.isObject)
+export default (theme, candourName, key) => (
+  _.omitBy(_.get(theme, [candourName, key], {}), _.isObject)
 )
