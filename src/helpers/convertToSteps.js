@@ -21,9 +21,10 @@ const STEP_PROPS = [
 
 export default (styles) => (
   traverse(styles).map(function(value) {
-    if (!value) return value
     if (!this.isLeaf) return value
     if (!_.includes(STEP_PROPS, this.key)) return value
+
+    if (!value) return value
     if (!isNumber(value)) return value
 
     return step(_.toNumber(value))

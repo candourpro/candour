@@ -35,28 +35,6 @@ export default {
   },
   button: {
     base: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-
-      width: '100%',
-      height: fluid(50, 70),
-
-      padding: `0 ${step()}`,
-
-      fontSize: step(),
-      letterSpacing: '.06em',
-      color: colors.white,
-      backgroundColor: colors.black,
-      textDecoration: 'none',
-      border: 0,
-      borderRadius,
-      cursor: 'pointer',
-      transition: 'background-color 300ms',
-
-      ':hover': {
-        backgroundColor: colors.lighterBlack,
-      },
     },
   },
   code: {
