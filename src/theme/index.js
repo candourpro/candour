@@ -7,7 +7,7 @@ import borders from './borders'
 import fontFamilies from './fontFamilies'
 import levels from '../helpers/levels'
 
-const sizes = [4, 3, 2, 1.75, 1.25, 1]
+const sizes = [4, 2.5, 1.5, 1, 0.75, 0.5]
 
 export default {
   heading: levels('fontSize', sizes),
@@ -35,7 +35,12 @@ export default {
   },
   button: {
     base: {
+      backgroundColor: colors.black,
+      color: colors.white,
+      cursor: 'pointer',
+      padding: 1,
     },
+    ...levels('fontSize', sizes),
   },
   code: {
     base: {

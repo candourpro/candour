@@ -9,9 +9,9 @@ import childrenProps from '../helpers/childrenProps'
 
 export default Radium(({
   children,
+  candourLevel = 4,
   component = 'div',
   candourName = 'container',
-  candourLevel = 6,
   ...rest,
 }) => {
   const Tag = ensureRadium(component)

@@ -16,12 +16,12 @@ const selectValue = (val) => {
 
 const partialMatch = (key) => (
   _.find(_.reverse(_.sortBy(knownCssProperties, 'length')), (knownProp) =>
-    _.startsWith(key, _.camelCase(knownProp))
+    _.startsWith(key, camelCaseCss(knownProp))
   )
 )
 
 const partialValue = (key, partial) => (
-  _.kebabCase(key.replace(new RegExp(`^${_.camelCase(partial)}`), ''))
+  _.kebabCase(key.replace(new RegExp(`^${camelCaseCss(partial)}`), ''))
 )
 
 export default (props) => {
@@ -33,7 +33,7 @@ export default (props) => {
     if (!partial) return
 
     return {
-      [_.camelCase(partial)]: partialValue(key, partial)
+      [camelCaseCss(partial)]: partialValue(key, partial)
     }
   })
 }
