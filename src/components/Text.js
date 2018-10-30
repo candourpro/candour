@@ -3,14 +3,14 @@ import Container from './Container'
 
 export default ({
   children,
-  level = 4,
+  level = 6,
   candourName = 'text',
   ...rest,
 }) => (
   <Container
     {...rest}
     candourName={candourName}
-    candourLevel={level}
+    level={level}
   >
     {children}
   </Container>

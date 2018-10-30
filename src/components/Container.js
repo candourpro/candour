@@ -9,25 +9,25 @@ import childrenProps from '../helpers/childrenProps'
 
 export default Radium(({
   children,
-  candourLevel = 4,
   component = 'div',
+  level = 6,
   candourName = 'container',
   ...rest,
 }) => {
-  const Tag = ensureRadium(component)
+  const Component = ensureRadium(component)
 
   return (
     <CandourConsumer>
       {theme => {
-        const styles = style(theme, rest, candourName, candourLevel)
+        const styles = style(theme, rest, candourName, level)
 
         return (
-          <Tag
-            {...childrenProps(rest, Tag, styles)}
+          <Component
+            {...childrenProps(rest, Component, styles)}
             style={styles}
           >
             {children}
-          </Tag>
+          </Component>
         )
       }}
     </CandourConsumer>

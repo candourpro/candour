@@ -7,9 +7,15 @@ import borders from './borders'
 import fontFamilies from './fontFamilies'
 import levels from '../helpers/levels'
 
-const sizes = [4, 2.5, 1.5, 1, 0.75, 0.5]
+const sizes = [4.5, 2.5, 2, 1.5, 1.25, 1, 0.75, 0.5]
 
 export default {
+  container: {
+    base: {
+      // Safari 12 calc + vw resize fix
+      minHeight: '0vw',
+    },
+  },
   heading: levels('fontSize', sizes),
   text: levels('fontSize', sizes),
   input: {
