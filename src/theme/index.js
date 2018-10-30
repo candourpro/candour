@@ -14,24 +14,10 @@ export default {
   text: levels('fontSize', sizes),
   input: {
     base: {
-      backgroundColor: colors.halfWhite,
-      outline: 0,
-      border: '1px solid transparent',
-      borderRadius,
-      boxShadow: 0,
-      boxSizing: 'border-box',
-      width: '100%',
-      WebkitAppearance: 'none',
-      height: fluid(50, 70),
-      padding: `0 ${step()}`,
-
-      ':focus': {
-        border: borders.yellow,
-      },
+      border: borders.black,
+      padding: 1,
     },
-    error: {
-      border: borders.red,
-    },
+    ...levels('fontSize', sizes),
   },
   button: {
     base: {
