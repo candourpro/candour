@@ -11,7 +11,7 @@ const allSides = (name) => [
   `${name}Left`,
 ]
 
-const STEP_PROPS = [
+const SIZE_PROPS = [
   ...allSides('padding'),
   ...allSides('margin'),
   'fontSize',
@@ -19,14 +19,14 @@ const STEP_PROPS = [
   'height',
 ]
 
-export default (styles) => (
+export default (converter, styles) => (
   traverse(styles).map(function(value) {
     if (!this.isLeaf) return value
-    if (!_.includes(STEP_PROPS, this.key)) return value
+    if (!_.includes(SIZE_PROPS, this.key)) return value
 
     if (!value) return value
     if (!isNumber(value)) return value
 
-    return step(_.toNumber(value))
+    return converter(_.toNumber(value))
   })
 )

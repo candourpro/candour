@@ -1,6 +1,5 @@
 import _ from 'lodash'
 import fluid from '@candour/fluid'
-import step from '@candour/step'
 import colors from './colors'
 import borderRadius from './borderRadius'
 import borders from './borders'

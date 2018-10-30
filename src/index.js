@@ -1,5 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
+import step from '@candour/step'
 
 import Container from './components/Container'
 import Text from './components/Text'
@@ -14,8 +15,11 @@ import theme from './theme'
 import levels from './helpers/levels'
 
 const { Provider, Consumer } = React.createContext(theme)
-const CandourProvider = ({ theme: value, children }) => (
-  <Provider value={_.defaultsDeep(_.cloneDeep(value), theme)}>
+const CandourProvider = ({ theme: value, sizeConverter = step, children }) => (
+  <Provider value={{
+    theme: _.defaultsDeep(_.cloneDeep(value), theme),
+    sizeConverter,
+  }}>
     {children}
   </Provider>
 )

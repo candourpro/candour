@@ -18,8 +18,8 @@ export default Radium(({
 
   return (
     <CandourConsumer>
-      {theme => {
-        const styles = style(theme, rest, candourName, level)
+      {(config) => {
+        const styles = style(config, rest, candourName, level)
 
         return (
           <Component

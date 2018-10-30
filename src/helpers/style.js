@@ -3,10 +3,11 @@ import _ from 'lodash'
 import base from './base'
 import propBase from './propBase'
 import modifiers from './modifiers'
-import convertToSteps from './convertToSteps'
+import convertSize from './convertSize'
 
-export default (theme, props, candourName, level) => (
-  convertToSteps(
+export default ({ theme, sizeConverter }, props, candourName, level) => (
+  convertSize(
+    sizeConverter,
     _.flatten([
       base(theme, 'container', 'base'),
       base(theme, 'container', level),
@@ -17,6 +18,6 @@ export default (theme, props, candourName, level) => (
       propBase(props, theme),
       modifiers(props),
       props.style,
-    ])
+    ]),
   )
 )
