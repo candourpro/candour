@@ -5,7 +5,7 @@ const getLevelSize = (sizes, level) => (
 )
 
 export default (prop, sizes) => (
-  _.reduce(_.range(1, 7), (memo, level) => ({
+  _.reduce(_.range(1, sizes.length + 1), (memo, level) => ({
     ...memo,
     [level]: {
       [prop]: getLevelSize(sizes, level),

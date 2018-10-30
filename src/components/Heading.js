@@ -4,7 +4,7 @@ import Container from './Container'
 export default ({
   children,
   level = 1,
-  component = `h${level}`,
+  component = level > 6 ? 'div' : `h${level}`,
   candourName = 'heading',
   ...rest,
 }) => (

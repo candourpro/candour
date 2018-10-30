@@ -6,7 +6,7 @@ import borders from './borders'
 import fontFamilies from './fontFamilies'
 import levels from '../helpers/levels'
 
-const sizes = [4.5, 2.5, 2, 1.5, 1.25, 1, 0.75, 0.5]
+const sizes = [4.5, 2.5, 2, 1.5, 1.25, 1, 0.85, 0.75, 0.65, 0.55]
 
 export default {
   container: {
