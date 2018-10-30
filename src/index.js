@@ -14,7 +14,7 @@ import theme from './theme'
 import levels from './helpers/levels'
 
 const { Provider, Consumer } = React.createContext(theme)
-const CandourProvider = ({ value, children }) => (
+const CandourProvider = ({ theme: value, children }) => (
   <Provider value={_.defaultsDeep(_.cloneDeep(value), theme)}>
     {children}
   </Provider>
