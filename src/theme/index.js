@@ -17,7 +17,6 @@ export default {
       border: borders.black,
       padding: 1,
     },
-    ...levels('fontSize', sizes),
   },
   button: {
     base: {
@@ -26,7 +25,6 @@ export default {
       cursor: 'pointer',
       padding: 1,
     },
-    ...levels('fontSize', sizes),
   },
   code: {
     base: {
@@ -35,6 +33,5 @@ export default {
       fontFamily: fontFamilies.monospace,
       whiteSpace: 'pre-wrap',
     },
-    ...levels('fontSize', sizes),
   },
 }
