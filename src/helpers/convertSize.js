@@ -17,6 +17,7 @@ const SIZE_PROPS = [
   'fontSize',
   'width',
   'height',
+  'borderWidth',
 ]
 
 export default (converter, styles) => (

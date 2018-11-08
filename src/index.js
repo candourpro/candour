@@ -8,7 +8,6 @@ import Heading from './components/Heading'
 import Button from './components/Button'
 import Input from './components/Input'
 import Code from './components/Code'
-import Normalize from './components/Normalize'
 
 import round from './theme/round'
 import isSmall from './theme/isSmall'
@@ -35,7 +34,6 @@ export {
   Button,
   Input,
   Code,
-  Normalize,
   isSmall,
   levels,
 }
