@@ -9,12 +9,7 @@ import levels from '../helpers/levels'
 const sizes = [4.5, 2.5, 2, 1.5, 1.25, 1, 0.85, 0.75, 0.65, 0.55]
 
 export default {
-  container: {
-    base: {
-      // Safari 12 calc + vw resize fix
-      minHeight: '0vw',
-    },
-  },
+  container: levels('fontSize', sizes),
   heading: levels('fontSize', sizes),
   text: levels('fontSize', sizes),
   input: {
