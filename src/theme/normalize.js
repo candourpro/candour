@@ -11,7 +11,6 @@ export default {
     backgroundColor: 'transparent',
     border: 0,
     outline: 0,
-    lineHeight: 1,
     textTransform: 'none',
     WebkitAppearance: 'inherit',
     boxSizing: 'border-box',
