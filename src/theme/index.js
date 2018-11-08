@@ -4,7 +4,7 @@ import colors from './colors'
 import borderRadius from './borderRadius'
 import borders from './borders'
 import fontFamilies from './fontFamilies'
-import levels from '../helpers/levels'
+import levels from '../lib/levels'
 
 const sizes = [4.5, 2.5, 2, 1.5, 1.25, 1, 0.85, 0.75, 0.65, 0.55]
 

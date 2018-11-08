@@ -3,11 +3,13 @@ import _ from 'lodash'
 import base from './base'
 import propBase from './propBase'
 import modifiers from './modifiers'
-import convertSize from './convertSize'
+import parse from './parse'
 
-export default ({ theme, sizeConverter }, props, candourName, level) => (
-  convertSize(
-    sizeConverter,
+export default (config, props, candourName, level) => {
+  const { theme } = config
+
+  return parse(
+    config,
     _.flatten([
       base(theme, 'container', 'base'),
       base(theme, 'container', level),
@@ -20,4 +22,4 @@ export default ({ theme, sizeConverter }, props, candourName, level) => (
       props.style,
     ]),
   )
-)
+}

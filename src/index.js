@@ -11,14 +11,19 @@ import Code from './components/Code'
 
 import round from './theme/round'
 import isSmall from './theme/isSmall'
-import theme from './theme'
-import levels from './helpers/levels'
+import defaultTheme from './theme'
+import defaultParsers from './parsers/index'
+import levels from './lib/levels'
 
-const { Provider, Consumer } = React.createContext(theme)
-const CandourProvider = ({ theme: value, sizeConverter = step, children }) => (
+const { Provider, Consumer } = React.createContext(defaultTheme)
+const CandourProvider = ({
+  theme,
+  parsers = defaultParsers,
+  children,
+}) => (
   <Provider value={{
-    theme: _.defaultsDeep(_.cloneDeep(value), theme),
-    sizeConverter,
+    theme: _.defaultsDeep(_.cloneDeep(theme), defaultTheme),
+    parsers,
   }}>
     {children}
   </Provider>

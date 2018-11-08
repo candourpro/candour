@@ -3,9 +3,9 @@ import Radium from 'radium'
 import _ from 'lodash'
 
 import { CandourConsumer } from '../index';
-import style from '../helpers/style'
-import ensureRadium from '../helpers/ensureRadium'
-import childrenProps from '../helpers/childrenProps'
+import style from '../lib/style'
+import ensureRadium from '../lib/ensureRadium'
+import childrenProps from '../lib/childrenProps'
 
 export default Radium(({
   children,
