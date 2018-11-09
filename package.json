@@ -1,14 +1,14 @@
 {
   "name": "candour",
-  "version": "4.1.2",
+  "version": "5.0.0",
   "author": "Domas Bitvinskas",
   "description": "Fluid design framework",
   "main": "dist/index.js",
   "license": "MIT",
-  "homepage": "https://github.com/Nedomas/candour",
+  "homepage": "https://candour.pro",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Nedomas/candour.git"
+    "url": "git://github.com/candourpro/candour.git"
   },
   "scripts": {
     "start": "webpack --watch",
