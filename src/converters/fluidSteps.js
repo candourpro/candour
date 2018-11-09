@@ -27,5 +27,5 @@ const fluidSteps = (_config, value, key) => {
   return step(_.toNumber(value))
 }
 
-fluidSteps.candourParserName = 'fluidSteps'
+fluidSteps.candourConverterName = 'fluidSteps'
 export default fluidSteps

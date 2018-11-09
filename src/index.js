@@ -14,21 +14,22 @@ import isSmall from './theme/isSmall'
 import defaultTheme from './theme'
 import levels from './lib/levels'
 
-import fluidSteps from './parsers/fluidSteps'
-import colors from './parsers/colors'
-import borders from './parsers/borders'
-import custom from './parsers/custom'
+import fluidSteps from './converters/fluidSteps'
+import colors from './converters/colors'
+import borders from './converters/borders'
+import fontFamilies from './converters/fontFamilies'
+import custom from './converters/custom'
 
 const { Provider, Consumer } = React.createContext(defaultTheme)
 const CandourProvider = ({
   theme,
-  parsers = [],
+  converters = [],
   children,
   ...rest,
 }) => (
   <Provider value={{
-    theme: _.defaultsDeep(_.cloneDeep(theme), defaultTheme(parsers)),
-    parsers,
+    theme: _.defaultsDeep(_.cloneDeep(theme), defaultTheme(converters)),
+    converters,
     ...rest,
   }}>
     {children}
@@ -50,5 +51,6 @@ export {
   fluidSteps,
   colors,
   borders,
+  fontFamilies,
   custom,
 }

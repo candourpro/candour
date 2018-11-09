@@ -7,11 +7,11 @@ export default (config, styles) => (
 
     let result = value
 
-    _.each(config.parsers, (parser) => {
-      const parsedValue = parser(config, value, this.key)
-      if (parsedValue === false) return
+    _.each(config.converters, (converter) => {
+      const converted = converter(config, value, this.key)
+      if (converted === false) return
 
-      result = parsedValue
+      result = converted
       return false
     })
 
