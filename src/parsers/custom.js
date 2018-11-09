@@ -1,8 +1,9 @@
 import _ from 'lodash'
 
-export default ({ theme }, value) => {
+export default ({ custom }, value) => {
+  if (!custom) return false
   if (!value) return false
-  if (!_.has(theme, `parsers.custom.${value}`)) return false
+  if (!_.has(custom, value)) return false
 
-  return theme.parsers.custom[value]
+  return custom[value]
 }

@@ -19,10 +19,13 @@ const SIZE_PROPS = [
   'borderWidth',
 ]
 
-export default ({ theme }, value, key) => {
+const fluidSteps = (_config, value, key) => {
   if (!value) return false
   if (!isNumber(value)) return false
   if (!_.includes(SIZE_PROPS, key)) return false
 
   return step(_.toNumber(value))
 }
+
+fluidSteps.candourParserName = 'fluidSteps'
+export default fluidSteps
