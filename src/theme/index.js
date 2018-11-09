@@ -9,8 +9,8 @@ import levels from '../lib/levels'
 const sizes = [4.5, 2.5, 2, 1.5, 1.25, 1, 0.85, 0.75, 0.65, 0.55]
 
 export default (converters) => {
-  const hasFluidStepsConverter = _.includes(converters, (p) => (
-    p.name === 'fluidSteps'
+  const hasFluidStepsConverter = _.some(converters, ({ name }) => (
+    name === 'fluidSteps'
   ))
 
   const convert = (value) => hasFluidStepsConverter ? value : `${value * 16}px`
