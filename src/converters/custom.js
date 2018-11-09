@@ -1,9 +1,8 @@
 import _ from 'lodash'
 
-export default ({ custom }, value) => {
-  if (!custom) return false
-  if (!value) return false
-  if (!_.has(custom, value)) return false
-
-  return custom[value]
+export default {
+  match: ({ custom }, value) => (
+    custom && value && _.has(custom, value)
+  ),
+  value: ({ custom }, value) => custom[value],
 }

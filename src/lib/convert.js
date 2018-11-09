@@ -8,10 +8,9 @@ export default (config, styles) => (
     let result = value
 
     _.each(config.converters, (converter) => {
-      const converted = converter(config, value, this.key)
-      if (converted === false) return
+      if (!converter.match(config, value, this.key)) return
 
-      result = converted
+      result = converter.value(config, value, this.key)
       return false
     })
 

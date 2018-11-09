@@ -19,13 +19,10 @@ const SIZE_PROPS = [
   'borderWidth',
 ]
 
-const fluidSteps = (_config, value, key) => {
-  if (!value) return false
-  if (!isNumber(value)) return false
-  if (!_.includes(SIZE_PROPS, key)) return false
-
-  return step(_.toNumber(value))
+export default {
+  name: 'fluidSteps',
+  match: (_config, value, key) => (
+    value && isNumber(value) && _.includes(SIZE_PROPS, key)
+  ),
+  value: (_config, value) => step(_.toNumber(value)),
 }
-
-fluidSteps.candourConverterName = 'fluidSteps'
-export default fluidSteps

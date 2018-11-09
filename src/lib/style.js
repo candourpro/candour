@@ -3,12 +3,12 @@ import _ from 'lodash'
 import base from './base'
 import propBase from './propBase'
 import modifiers from './modifiers'
-import parse from './parse'
+import convert from './convert'
 
 export default (config, props, candourName, level) => {
   const { theme } = config
 
-  return parse(
+  return convert(
     config,
     _.flatten([
       base(theme, 'container', 'base'),

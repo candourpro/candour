@@ -1,10 +1,8 @@
 import _ from 'lodash'
 
-export default ({ borders }, value, key) => {
-  if (!borders) return false
-  if (!value) return false
-  if (key !== 'border') return false
-  if (!_.has(borders, value)) return false
-
-  return borders[value]
+export default {
+  match: ({ borders }, value, key) => (
+    borders && value && key === 'border' && _.has(borders, value)
+  ),
+  value: ({ borders }, value) => borders[value],
 }
