@@ -15,18 +15,13 @@
     "build": "webpack"
   },
   "dependencies": {
-    "@candour/fluid": "^1.0.9",
-    "@candour/step": "2.0.0",
     "camelcase-css": "^2.0.1",
     "filter-invalid-dom-props": "^2.0.0",
     "filter-react-dom-props": "^0.0.2",
-    "is-number": "^7.0.0",
     "known-css-properties": "^0.6.1",
     "lodash": "^4.17.10",
-    "prop-types": "^15.6.2",
     "radium": "^0.24.0",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0",
     "traverse": "^0.6.6"
   },
   "devDependencies": {

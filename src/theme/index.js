@@ -1,8 +1,4 @@
 import _ from 'lodash'
-import fluid from '@candour/fluid'
-import colors from './colors'
-import borderRadius from './borderRadius'
-import borders from './borders'
 import fontFamily from './fontFamily'
 import levels from '../lib/levels'
 
