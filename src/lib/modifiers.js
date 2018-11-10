@@ -1,9 +1,9 @@
 import _ from 'lodash'
-import { all as knownCssProperties } from 'known-css-properties'
+import cssProperties from 'css-properties'
 import camelCaseCss from 'camelcase-css'
 
 const fullMatch = (key) => (
-  _.some(knownCssProperties, (knownProp) => camelCaseCss(knownProp) === key)
+  _.some(cssProperties, (prop) => camelCaseCss(prop) === key)
 )
 
 const selectValue = (val) => {
@@ -14,8 +14,8 @@ const selectValue = (val) => {
 }
 
 const partialMatch = (key) => (
-  _.find(_.reverse(_.sortBy(knownCssProperties, 'length')), (knownProp) =>
-    _.startsWith(key, camelCaseCss(knownProp))
+  _.find(_.reverse(_.sortBy(cssProperties, 'length')), (prop) =>
+    _.startsWith(key, camelCaseCss(prop))
   )
 )
 
