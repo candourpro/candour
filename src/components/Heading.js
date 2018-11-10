@@ -1,19 +1,24 @@
 import React from 'react'
 import Container from './Container'
+import levelFromProps from '../lib/levelFromProps'
 
 export default ({
   children,
-  level = 1,
-  component = level > 6 ? 'div' : `h${level}`,
+  component: componentProp,
   candourName = 'heading',
   ...rest,
-}) => (
-  <Container
-    {...rest}
-    component={component}
-    candourName={candourName}
-    level={level}
-  >
-    {children}
-  </Container>
-)
+}) => {
+  const level = levelFromProps(rest) || 1
+  const component = componentProp || level > 6 ? 'div' : `h${level}`
+
+  return (
+    <Container
+      {...rest}
+      component={component}
+      candourName={candourName}
+      level={level}
+    >
+      {children}
+    </Container>
+  )
+}

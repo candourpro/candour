@@ -6,15 +6,16 @@ import { CandourConsumer } from '../index';
 import style from '../lib/style'
 import ensureRadium from '../lib/ensureRadium'
 import childrenProps from '../lib/childrenProps'
+import levelFromProps from '../lib/levelFromProps'
 
 export default Radium(({
   children,
   component = 'div',
-  level = 6,
   candourName = 'container',
   ...rest,
 }) => {
   const Component = ensureRadium(component)
+  const level = levelFromProps(rest) || 6
 
   return (
     <CandourConsumer>
