@@ -7,6 +7,8 @@ import style from '../lib/style'
 import ensureRadium from '../lib/ensureRadium'
 import childrenProps from '../lib/childrenProps'
 import levelFromProps from '../lib/levelFromProps'
+import transformProps from '../lib/transformProps'
+import convert from '../lib/convert'
 
 export default Radium(({
   children,
@@ -20,12 +22,15 @@ export default Radium(({
   return (
     <CandourConsumer>
       {(config) => {
-        const styles = style(config, rest, candourName, level)
+        const props = transformProps(rest)
+        const usedProps = []
+        const styles = style(config, props, candourName, level, usedProps)
+        const convertedStyles = convert(config, styles)
 
         return (
           <Component
-            {...childrenProps(rest, Component, styles)}
-            style={styles}
+            {...childrenProps(props, convertedStyles, usedProps)}
+            style={convertedStyles}
           >
             {children}
           </Component>

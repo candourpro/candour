@@ -1,19 +1,16 @@
 import _ from 'lodash'
-import traverse from 'traverse'
 
 export default (config, styles) => (
-  traverse(styles).map(function(value) {
-    if (!this.isLeaf) return value
-
-    let result = value
+  _.reduce(styles, (memo, value, key) => {
+    memo[key] = value
 
     _.each(config.converters, (converter) => {
-      if (!converter.match(config, value, this.key)) return
+      if (!converter.match(config, value, key)) return
 
-      result = converter.value(config, value, this.key)
+      memo[key] = converter.value(config, value, key)
       return false
     })
 
-    return result
-  })
+    return memo
+  }, {})
 )

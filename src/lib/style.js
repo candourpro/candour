@@ -1,16 +1,10 @@
 import _ from 'lodash'
 
-import convert from './convert'
 import themeStyle from './themeStyle'
-import modifiers from './modifiers'
+import cssNameMatch from './cssNameMatch'
 
-export default (config, props, candourName, level) => (
-  convert(
-    config,
-    _.flatten([
-      ...themeStyle(config, props, candourName, level),
-      modifiers(props),
-      props.style,
-    ]),
-  )
-)
+export default (config, props, candourName, level, usedProps) => ({
+  ...themeStyle(config, props, candourName, level, usedProps),
+  ..._.pickBy(props, (value, key) => cssNameMatch(key)),
+  ...props.style,
+})
