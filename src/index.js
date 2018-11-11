@@ -10,8 +10,12 @@ import Code from './components/Code'
 
 import defaultTheme from './theme'
 import levels from './lib/levels'
+import useBreakpointsFunction from './lib/useBreakpointsFunction'
 
-const { Provider, Consumer } = React.createContext(defaultTheme)
+const Context = React.createContext(defaultTheme)
+const { Provider, Consumer } = Context
+
+const CandourConsumer = Consumer
 const CandourProvider = ({
   theme,
   converters = [],
@@ -26,7 +30,8 @@ const CandourProvider = ({
     {children}
   </Provider>
 )
-const CandourConsumer = Consumer
+
+const useBreakpoints = useBreakpointsFunction(Context)
 
 export {
   CandourProvider,
@@ -38,4 +43,5 @@ export {
   Input,
   Code,
   levels,
+  useBreakpoints,
 }
