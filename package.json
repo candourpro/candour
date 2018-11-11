@@ -1,6 +1,6 @@
 {
   "name": "candour",
-  "version": "5.0.3",
+  "version": "5.0.4",
   "author": "Domas Bitvinskas",
   "description": "Fluid design framework",
   "main": "dist/index.js",
@@ -18,8 +18,10 @@
     "camelcase-css": "^2.0.1",
     "css-properties": "^2.0.2",
     "lodash": "^4.17.10",
-    "radium": "^0.24.0",
-    "react": "^16.4.0"
+    "radium": "^0.24.0"
+  },
+  "peerDependencies": {
+    "react": ">=16"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
