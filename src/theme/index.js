@@ -18,8 +18,6 @@ export default (converters) => {
       },
       ...levels('fontSize', _.map(sizes, convert)),
     },
-    heading: levels('fontSize', _.map(sizes, convert)),
-    text: levels('fontSize', _.map(sizes, convert)),
     input: {
       base: {
         border: '1px solid black',

@@ -1,12 +1,13 @@
 import React from 'react'
 import _ from 'lodash'
 
-import Container from './components/Container'
-import Text from './components/Text'
-import Heading from './components/Heading'
-import Button from './components/Button'
-import Input from './components/Input'
-import Code from './components/Code'
+import Container from './primitives/Container'
+import Text from './primitives/Text'
+import Heading from './primitives/Heading'
+import Button from './primitives/Button'
+import Input from './primitives/Input'
+import Code from './primitives/Code'
+import Link from './primitives/Link'
 
 import defaultTheme from './theme'
 import levels from './lib/levels'
@@ -42,6 +43,7 @@ export {
   Button,
   Input,
   Code,
+  Link,
   levels,
   useBreakpoints,
 }

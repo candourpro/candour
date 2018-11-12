@@ -13,7 +13,7 @@ import convert from '../lib/convert'
 export default Radium(({
   children,
   component = 'div',
-  candourName = 'container',
+  primitiveType = 'container',
   ...rest,
 }) => {
   const Component = ensureRadium(component)
@@ -24,7 +24,7 @@ export default Radium(({
       {(config) => {
         const props = transformProps(rest)
         const usedProps = []
-        const styles = style(config, props, candourName, level, usedProps)
+        const styles = style(config, props, primitiveType, level, usedProps)
         const convertedStyles = convert(config, styles)
 
         return (

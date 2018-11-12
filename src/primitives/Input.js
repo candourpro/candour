@@ -4,13 +4,13 @@ import Container from './Container'
 export default ({
   children,
   component = 'input',
-  candourName = 'input',
+  primitiveType = 'input',
   ...rest,
 }) => (
   <Container
     {...rest}
     component={component}
-    candourName={candourName}
+    primitiveType={primitiveType}
   >
     {children}
   </Container>

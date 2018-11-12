@@ -55,7 +55,7 @@ render(
 )
 ```
 
-## Components
+## Primitives
 
 ### Container
 
@@ -71,7 +71,7 @@ render(
 ```
 
 `Container` accepts all CSS properties as camelCased props which then are merged into the style property. Here are all the available keys:
-[CSS properties] 
+[CSS properties]
 
 All the properties that a related to sizes can be specified in steps:
 ```jsx
@@ -122,4 +122,3 @@ export default {
   },
 }
 ```
-

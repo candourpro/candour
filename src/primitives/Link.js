@@ -1,14 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Container from './Container'
 
 export default ({
   children,
-  candourName = 'code',
+  component = 'a',
+  primitiveType = 'link',
   ...rest,
 }) => (
   <Container
     {...rest}
-    candourName={candourName}
+    component={component}
+    primitiveType={primitiveType}
   >
     {children}
   </Container>

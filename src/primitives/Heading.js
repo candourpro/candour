@@ -5,7 +5,7 @@ import levelFromProps from '../lib/levelFromProps'
 export default ({
   children,
   component: componentProp,
-  candourName = 'heading',
+  primitiveType = 'heading',
   ...rest,
 }) => {
   const level = levelFromProps(rest) || 1
@@ -15,7 +15,7 @@ export default ({
     <Container
       {...rest}
       component={component}
-      candourName={candourName}
+      primitiveType={primitiveType}
       level={level}
     >
       {children}

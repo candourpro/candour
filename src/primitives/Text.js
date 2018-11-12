@@ -3,12 +3,12 @@ import Container from './Container'
 
 export default ({
   children,
-  candourName = 'text',
+  primitiveType = 'text',
   ...rest,
 }) => (
   <Container
     {...rest}
-    candourName={candourName}
+    primitiveType={primitiveType}
   >
     {children}
   </Container>
