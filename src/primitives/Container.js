@@ -10,7 +10,7 @@ import levelFromProps from '../lib/levelFromProps'
 import transformProps from '../lib/transformProps'
 import convert from '../lib/convert'
 
-export default ({
+export default Radium(({
   children,
   component = 'div',
   primitiveType = 'container',
@@ -35,4 +35,4 @@ export default ({
       )
     }}
   </CandourConsumer>
-)
+))
