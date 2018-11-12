@@ -1,16 +1,21 @@
 import _ from 'lodash'
+import traverse from 'traverse'
 
-export default (config, styles) => (
-  _.reduce(styles, (memo, value, key) => {
-    memo[key] = value
+export default (config, styles) => {
+  const result = _.cloneDeep(styles)
+
+  traverse(result).forEach(function(value) {
+    if (this.notLeaf) return
+
+    const that = this
 
     _.each(config.converters, (converter) => {
-      if (!converter.match(config, value, key)) return
+      if (!converter.match(config, value, that.key)) return
 
-      memo[key] = converter.value(config, value, key)
+      that.update(converter.value(config, value, that.key))
       return false
     })
+  })
 
-    return memo
-  }, {})
-)
+  return result
+}

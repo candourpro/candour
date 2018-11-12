@@ -3144,10 +3144,10 @@ querystring@0.2.0:
   resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.0.tgz#b209849203bb25df820da756e747005878521620"
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
 
-radium@^0.24.0:
-  version "0.24.0"
-  resolved "https://registry.yarnpkg.com/radium/-/radium-0.24.0.tgz#32ca64e5cb8226cac3887d5eaf9a150516600de0"
-  integrity sha512-C6jhX1j1bnywQFdUDbVVmwlnrFo5YFZrS0nP6lRFQjyqA1L0Trj4pJhDib5kNU8HNZeEJ7Y5sbXJKfywQp290A==
+radium@^0.25.0:
+  version "0.25.0"
+  resolved "https://registry.yarnpkg.com/radium/-/radium-0.25.0.tgz#d039bb4e13a3f224c3d4e22bfbcd766048e8caa5"
+  integrity sha512-GieN/VhSeFIVPaJLnp5QZNxkzWEuQIbFs/FewW99z2v3ulwZN65LZ/V66XCp7xKTkrLva+IXPc20LcetGx6Dxg==
   dependencies:
     exenv "^1.2.1"
     inline-style-prefixer "^4.0.0"
@@ -3739,6 +3739,11 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     extend-shallow "^3.0.2"
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
+
+traverse@^0.6.6:
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/traverse/-/traverse-0.6.6.tgz#cbdf560fd7b9af632502fed40f918c157ea97137"
+  integrity sha1-y99WD9e5r2MlAv7UD5GMFX6pcTc=
 
 trim-right@^1.0.1:
   version "1.0.1"
