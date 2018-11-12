@@ -20,7 +20,6 @@ export default (converters) => {
     },
     input: {
       base: {
-        border: '1px solid black',
         padding: convert(1),
       },
     },
