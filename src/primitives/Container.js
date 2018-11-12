@@ -10,32 +10,29 @@ import levelFromProps from '../lib/levelFromProps'
 import transformProps from '../lib/transformProps'
 import convert from '../lib/convert'
 
-export default Radium(({
+export default ({
   children,
   component = 'div',
   primitiveType = 'container',
   ...rest,
-}) => {
-  const Component = ensureRadium(component)
-  const level = levelFromProps(rest) || 6
+}) => (
+  <CandourConsumer>
+    {(config) => {
+      const Component = ensureRadium(component)
+      const level = levelFromProps(rest) || 6
+      const props = transformProps(rest)
+      const usedProps = []
+      const styles = style(config, props, primitiveType, level, usedProps)
+      const convertedStyles = convert(config, styles)
 
-  return (
-    <CandourConsumer>
-      {(config) => {
-        const props = transformProps(rest)
-        const usedProps = []
-        const styles = style(config, props, primitiveType, level, usedProps)
-        const convertedStyles = convert(config, styles)
-
-        return (
-          <Component
-            {...childrenProps(props, convertedStyles, usedProps)}
-            style={convertedStyles}
-          >
-            {children}
-          </Component>
-        )
-      }}
-    </CandourConsumer>
-  )
-})
+      return (
+        <Component
+          {...childrenProps(props, convertedStyles, usedProps)}
+          style={convertedStyles}
+        >
+          {children}
+        </Component>
+      )
+    }}
+  </CandourConsumer>
+)

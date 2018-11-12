@@ -3,7 +3,6 @@ import Container from './Container'
 import levelFromProps from '../lib/levelFromProps'
 
 export default ({
-  children,
   component: componentProp,
   primitiveType = 'heading',
   ...rest,
@@ -17,8 +16,6 @@ export default ({
       component={component}
       primitiveType={primitiveType}
       level={level}
-    >
-      {children}
-    </Container>
+    />
   )
 }

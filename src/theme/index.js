@@ -34,7 +34,6 @@ export default (converters) => {
     },
     code: {
       base: {
-        padding: convert(1),
         fontFamily: 'monospace',
         whiteSpace: 'pre-wrap',
       },

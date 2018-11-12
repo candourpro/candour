@@ -2,7 +2,6 @@ import React from 'react'
 import Container from './Container'
 
 export default ({
-  children,
   component = 'input',
   primitiveType = 'input',
   ...rest,
@@ -11,7 +10,5 @@ export default ({
     {...rest}
     component={component}
     primitiveType={primitiveType}
-  >
-    {children}
-  </Container>
+  />
 )
