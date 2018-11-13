@@ -1,8 +1,8 @@
 {
   "name": "candour",
-  "version": "5.3.3",
+  "version": "5.4.0",
   "author": "Domas Bitvinskas",
-  "description": "Fluid design framework",
+  "description": "Fully Configurable Inline Style System for React",
   "main": "dist/index.js",
   "license": "MIT",
   "homepage": "https://candour.pro",

@@ -1,5 +1,6 @@
 import React from 'react'
 import _ from 'lodash'
+import { Style as RadiumStyle } from 'radium'
 
 import Container from './primitives/Container'
 import Text from './primitives/Text'
@@ -11,7 +12,9 @@ import Link from './primitives/Link'
 
 import defaultTheme from './theme'
 import levels from './lib/levels'
+import convert from './lib/convert'
 import useBreakpointsFunction from './lib/useBreakpointsFunction'
+import useConvertFunction from './lib/useConvertFunction'
 
 const Context = React.createContext(defaultTheme)
 const { Provider, Consumer } = Context
@@ -33,6 +36,15 @@ const CandourProvider = ({
 )
 
 const useBreakpoints = useBreakpointsFunction(Context)
+const useConvert = useConvertFunction(Context)
+
+const Style = ({ rules, ...rest }) => (
+  <CandourConsumer>
+    {(config) => (
+      <RadiumStyle rules={convert(config, rules)} {...rest} />
+    )}
+  </CandourConsumer>
+)
 
 export {
   CandourProvider,
@@ -44,6 +56,8 @@ export {
   Input,
   Code,
   Link,
+  Style,
   levels,
   useBreakpoints,
+  useConvert,
 }
