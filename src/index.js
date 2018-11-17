@@ -16,7 +16,7 @@ import convert from './lib/convert'
 import useBreakpointsFunction from './lib/useBreakpointsFunction'
 import useConvertFunction from './lib/useConvertFunction'
 
-const Context = React.createContext(defaultTheme)
+const Context = React.createContext(defaultTheme([]))
 const { Provider, Consumer } = Context
 
 const CandourConsumer = Consumer

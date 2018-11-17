@@ -21,7 +21,7 @@ export default Radium(({
       const Component = ensureRadium(component)
       const level = levelFromProps(rest) || 6
       const props = transformProps(rest)
-      const usedProps = []
+      const usedProps = ['level']
       const styles = style(config, props, primitiveType, level, usedProps)
       const convertedStyles = convert(config, styles)
 
