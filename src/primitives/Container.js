@@ -1,16 +1,14 @@
 import React from 'react'
-import Radium from 'radium'
 import _ from 'lodash'
 
 import { CandourConsumer } from '../index';
 import style from '../lib/style'
-import ensureRadium from '../lib/ensureRadium'
 import childrenProps from '../lib/childrenProps'
 import levelFromProps from '../lib/levelFromProps'
 import transformProps from '../lib/transformProps'
 import convert from '../lib/convert'
 
-export default Radium(({
+export default ({
   children,
   component = 'div',
   primitiveType = 'container',
@@ -18,7 +16,7 @@ export default Radium(({
 }) => (
   <CandourConsumer>
     {(config) => {
-      const Component = ensureRadium(component)
+      const Component = component
       const level = levelFromProps(rest) || 6
       const props = transformProps(rest)
       const usedProps = ['level']
@@ -35,4 +33,4 @@ export default Radium(({
       )
     }}
   </CandourConsumer>
-))
+)
