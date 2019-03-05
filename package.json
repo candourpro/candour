@@ -1,6 +1,6 @@
 {
   "name": "candour",
-  "version": "5.5.2",
+  "version": "5.5.3",
   "author": "Domas Bitvinskas",
   "description": "React Design System For Maximal Productivity",
   "main": "dist/index.js",
