@@ -1,6 +1,6 @@
 {
   "name": "candour",
-  "version": "5.5.1",
+  "version": "5.5.2",
   "author": "Domas Bitvinskas",
   "description": "React Design System For Maximal Productivity",
   "main": "dist/index.js",
@@ -17,7 +17,7 @@
   "dependencies": {
     "camelcase-css": "^2.0.1",
     "css-properties": "^2.0.2",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.11",
     "radium": "^0.25.0",
     "traverse": "^0.6.6"
   },
