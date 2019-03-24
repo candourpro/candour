@@ -46,9 +46,12 @@ const Style = ({ rules, ...rest }) => (
   </CandourConsumer>
 )
 
+const S = Container
+
 export {
   CandourProvider,
   CandourConsumer,
+  S,
   Container,
   Text,
   Heading,
